@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<GfxHandler src="cache\tiles\demo_level\water_debris.$img" width="185" height="160" flags="GFX_NOFLAGS">
+
+        <Animation numFrames="40" frameInterval="50"/>
+
+</GfxHandler>

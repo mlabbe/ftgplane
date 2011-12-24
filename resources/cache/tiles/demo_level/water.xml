@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<GfxHandler src="cache\tiles\dev\liquid.$img" width="128" height="128" flags="GFX_NOFLAGS">
+
+  <SurfaceParm remove="SURFACE_SOLID"/>
+  <SurfaceParm flag="SURFACE_LIQUID"/>
+  <SurfaceParm flag="SURFACE_NODRAW"/>
+
+</GfxHandler>

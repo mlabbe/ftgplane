@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<GfxHandler src="cache\tiles\dev\permeable.$img" width="128" height="128" flags="GFX_NOFLAGS">
+
+  <SurfaceParm remove="SURFACE_SOLID"/>
+  <SurfaceParm flag="SURFACE_PERMEABLE"/>
+
+</GfxHandler>

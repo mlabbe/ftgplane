@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<GfxHandler src="cache\tiles\demo_level\caustics.$img" width="200" height="250" flags="GFX_NOFLAGS">
+
+        <Animation numFrames="45" frameInterval="53"/>
+
+        <BlendFunc src="GL_SRC_ALPHA" dst="GL_ONE"/>
+
+</GfxHandler>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<GfxHandler src="cache\tiles\demo_level\floatie.$img" width="30" height="100" flags="GFX_NOFLAGS">
+
+        <Animation numFrames="63" frameInterval="30"/>
+
+</GfxHandler>

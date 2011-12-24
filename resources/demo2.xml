@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<Panel>
+  <Layer zDistance="-4096">
+    <PutBox name="cache/tiles/dev/3.bmp" degrees="0" tx="0" ty="0" ex="64" ey="64"/>
+    <PutBox name="cache/tiles/dev/2.bmp" degrees="90" tx="128" ty="0" ex="64" ey="64"/>
+    <PutBox name="cache/tiles/dev/1.bmp" degrees="-90" tx="-128" ty="0" ex="64" ey="64"/>
+  </Layer>
+
+  <Layer zDistance="-320">
+    <PutBox name="cache/tiles/dev/3.bmp" degrees="0" tx="0" ty="0" ex="64" ey="64"/>
+    <PutBox name="cache/tiles/dev/2.bmp" degrees="90" tx="0" ty="64" ex="64" ey="64"/>
+    <PutBox name="cache/tiles/dev/1.bmp" degrees="-90" tx="0" ty="-64" ex="64" ey="64"/>
+  </Layer>
+
+  <Layer zDistance="-900">
+    <PutBox name="cache/tiles/dev/3.bmp" degrees="0" tx="128" ty="0" ex="64" ey="64"/>
+    <PutBox name="cache/tiles/dev/2.bmp" degrees="90" tx="128" ty="128" ex="64" ey="64"/>
+    <PutBox name="cache/tiles/dev/1.bmp" degrees="-90" tx="128" ty="-128" ex="64" ey="64"/>
+
+    <PutBox name="cache/tiles/dev/3.bmp" degrees="0" tx="-128" ty="0" ex="64" ey="64"/>
+    <PutBox name="cache/tiles/dev/2.bmp" degrees="90" tx="-128" ty="128" ex="64" ey="64"/>
+    <PutBox name="cache/tiles/dev/1.bmp" degrees="-90" tx="-128" ty="-128" ex="64" ey="64"/>
+
+  </Layer>
+
+</Panel>

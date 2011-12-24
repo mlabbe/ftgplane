@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<GfxHandler src="cache\tiles\demo_level\Demo+1.$img" width="848" height="1647" flags="GFX_NOFLAGS">
+
+        <BlendFunc src="GL_SRC_ALPHA" dst="GL_ONE_MINUS_SRC_ALPHA"/>
+
+</GfxHandler>

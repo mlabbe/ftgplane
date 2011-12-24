@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<GfxHandler src="cache\tiles\dev\swimsand.$img" width="64" height="64" flags="GFX_NOFLAGS">
+
+  <SurfaceParm remove="SURFACE_SOLID"/>
+
+  <SurfaceParm flag="SURFACE_LIQUID"/>
+  <SurfaceParm flag="SURFACE_PERMEABLE"/>
+
+</GfxHandler>

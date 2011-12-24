@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+
+<Panel>
+  <Layer scrollX="0.05" scrollY="0.05">
+    <PutBox name="cache/tiles/demo_level/Demo-8_sunset.png" degrees="0" tx="659" ty="-343" ex="4047" ey="1866"/>
+  </Layer>
+
+  <Layer scrollX="0.15" scrollY="0.15">
+    <PutBox name="cache/tiles/demo_level/Demo-6_hillbeach.png" degrees="0" tx="354" ty="692" ex="3591" ey="995"/>
+  </Layer>
+
+  <Layer scrollX="0.2" scrollY="0.2">
+    <PutBox name="cache/tiles/demo_level/Demo-5_islands.png" degrees="0" tx="108" ty="689" ex="987" ey="465"/>
+  </Layer>
+
+  <Layer scrollX="0.5" scrollY="0.5">
+    <PutBox name="cache/tiles/demo_level/Demo-4.png" degrees="0" tx="3069" ty="1622" ex="653" ey="370"/>
+  </Layer>
+
+  <Layer scrollX="0.6" scrollY="0.6">
+    <PutBox name="cache/tiles/demo_level/Demo-3.png" degrees="0" tx="3315" ty="1379" ex="3317" ey="3301"/>
+  </Layer>
+
+  <Layer scrollX="0.7" scrollY="0.7">
+    <PutBox name="cache/tiles/demo_level/Demo-2.png" degrees="0" tx="3744" ty="862" ex="2709" ey="2133"/>
+    <PutBox name="cache/tiles/demo_level/Demo-2-Steam.png" degrees="0" tx="3719" ty="1039" ex="2903" ey="1195"/>
+  </Layer>
+
+  <Layer scrollX="0.8" scrollY="0.8">
+    <PutBox name="cache/tiles/demo_level/Demo-1_ceiling.png" degrees="0" tx="3309" ty="394" ex="2045" ey="648"/>
+    <PutBox name="cache/tiles/demo_level/Demo-1_trees.png" degrees="0" tx="4137" ty="1589" ex="2225" ey="2001"/>
+    <PutBox name="cache/tiles/demo_level/torch.xml" degrees="13.35" tx="4016" ty="1324" ex="100" ey="175"/>
+    <PutBox name="cache/tiles/demo_level/torch.xml" degrees="-8.7" tx="4387" ty="1311" ex="150" ey="262.5"/>
+    <PutBox name="cache/tiles/demo_level/torch.xml" degrees="-9" tx="4680" ty="1050" ex="100" ey="175"/>
+    <PutBox name="cache/tiles/demo_level/torch.xml" degrees="1.05" tx="5078" ty="1026" ex="150" ey="262.5"/>
+  </Layer>
+
+  <Layer scrollX="0.9" scrollY="0.9">
+  </Layer>
+
+  <Layer scrollX="1" scrollY="1">
+    <PutBox name="cache/tiles/demo_level/lavafall.xml" degrees="0" tx="3525" ty="1709" ex="150" ey="1000"/>
+    <PutBox name="cache/tiles/demo_level/Demo0-1_lavarock.png" degrees="0" tx="3338" ty="1726" ex="1740" ey="2044"/>
+  </Layer>
+
+  <Layer scrollX="1" scrollY="1">
+    <PutBox name="cache/tiles/demo_level/Demo0_endextend.png" degrees="0" tx="6877" ty="2035" ex="1831" ey="2535"/>
+    <PutBox name="cache/tiles/demo_level/Demo0_end.png" degrees="0" tx="4994" ty="2295" ex="2270" ey="1970"/>
+    <PutBox name="cache/tiles/demo_level/Demo0_lowermid.png" degrees="0" tx="2428" ty="1935" ex="2813" ey="1005"/>
+    <PutBox name="cache/tiles/demo_level/Demo0_uppermid.png" degrees="0" tx="2547" ty="1025" ex="3394" ey="835"/>
+    <PutBox name="cache/tiles/demo_level/chief_torch.xml" degrees="0" tx="5542" ty="1266" ex="200" ey="350"/>
+  </Layer>
+
+  <Layer scrollX="1" scrollY="1">
+    <PutBox name="cache/tiles/demo_level/swimsand.xml" degrees="0" tx="-589" ty="1861" ex="610" ey="300"/>
+    <PutBox name="cache/tiles/demo_level/swimsand.xml" degrees="0" tx="-556" ty="2632" ex="810" ey="1300"/>
+    <PutBox name="cache/tiles/demo_level/water.xml" degrees="0" tx="4900" ty="2330" ex="1850" ey="800"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-17.55" tx="-316" ty="1954" ex="170" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="0" tx="189" ty="1990" ex="1000" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-45" tx="1249" ty="1988" ex="300" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="0" tx="1540" ty="1889" ex="400" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="15" tx="1880" ty="1929" ex="300" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="0" tx="2246" ty="2026" ex="150" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="0" tx="2753" ty="2026" ex="150" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="0" tx="3350" ty="1813" ex="800" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="0" tx="603" ty="1301" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-32" tx="1060" ty="1072" ex="310" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="0" tx="1429" ty="992" ex="500" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="0" tx="2080" ty="1073" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="0" tx="2575" ty="1114" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-45" tx="2773" ty="1023" ex="250" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-6" tx="3083" ty="920" ex="460" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="0" tx="3558" ty="896" ex="500" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="11.5" tx="3930" ty="919" ex="257" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="56" tx="4101" ty="1017" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="15" tx="4009" ty="1734" ex="170" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="0" tx="4293" ty="1753" ex="410" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="0" tx="4087" ty="2263" ex="50" ey="900"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="0" tx="4600" ty="2591" ex="1000" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-37.7" tx="5392" ty="2339" ex="1000" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-67" tx="5748" ty="1996" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-20" tx="5986" ty="1840" ex="450" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="23.15" tx="5586" ty="1557" ex="700" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="4.65" tx="-495" ty="1737" ex="420" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="78" tx="-353" ty="1520" ex="500" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-30.45" tx="-705" ty="1749" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-87.75" tx="-757" ty="1831" ex="300" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-43.05" tx="-828" ty="2030" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-104.55" tx="-862" ty="2175" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-137.1" tx="-769" ty="2303" ex="300" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="51.45" tx="-309" ty="2064" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-66.75" tx="-293" ty="2206" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-120" tx="-259" ty="2405" ex="300" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-121.35" tx="-496" ty="2809" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-81.2999" tx="-213" ty="2582" ex="300" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-113.7" tx="-177" ty="2854" ex="300" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-57.3" tx="-223" ty="3056" ex="420" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-10.35" tx="-477" ty="3213" ex="420" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="8.84997" tx="-730" ty="3224" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="39.3" tx="-930" ty="3129" ex="240" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="19.2" tx="-1113" ty="3021" ex="220" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-65.8501" tx="-487" ty="2946" ex="180" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-67.6501" tx="-575" ty="2839" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-137.55" tx="-558" ty="2965" ex="170" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="2.54997" tx="-895" ty="2816" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-70.65" tx="-762" ty="2602" ex="430" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-95.7" tx="-990" ty="2545" ex="500" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="0" tx="-2343" ty="2985" ex="2270" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="14.5499" tx="-1487.33" ty="2957.49" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="25.6499" tx="-1590.33" ty="2916.49" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="24.8999" tx="-1723.33" ty="2852.49" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="18.2999" tx="-1858.33" ty="2795.49" ex="100" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="11.6999" tx="-1950.33" ty="2769.49" ex="90" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="6.14987" tx="-2045.33" ty="2755.49" ex="100" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="0.149873" tx="-2154.33" ty="2750.49" ex="120" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-1.95013" tx="-2274.68" ty="2753" ex="120" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-4.05013" tx="-2392.68" ty="2760" ex="120" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-7.5001" tx="-2553.68" ty="2778" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-8.4001" tx="-2753.68" ty="2806" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-8.2501" tx="-2952.7" ty="2835" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-6.45013" tx="-3111.7" ty="2857" ex="120" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="3.74987" tx="-3186.7" ty="2857" ex="120" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="7.9499" tx="-3298.7" ty="2843" ex="200" ey="50"/>
+    <PutBox name="cache/tiles/editor/clip.xml" degrees="-92.15" tx="6211" ty="1529.65" ex="450" ey="50"/>
+  </Layer>
+
+  <Layer scrollX="1" scrollY="1">
+    <PutBox name="cache/tiles/demo_level/Demo0+1_bottommid.png" degrees="0" tx="2630" ty="1831" ex="2981" ey="486"/>
+    <PutBox name="cache/tiles/demo_level/Demo0+1_uppermid.png" degrees="0" tx="2549" ty="935" ex="3290" ey="511"/>
+    <PutBox name="cache/tiles/demo_level/floatie.xml" degrees="80" tx="4312" ty="2140" ex="30" ey="100"/>
+    <PutBox name="cache/tiles/demo_level/floatie2.xml" degrees="60" tx="4412" ty="2240" ex="30" ey="100"/>
+    <PutBox name="cache/tiles/demo_level/floatie4.xml" degrees="20" tx="4612" ty="2140" ex="30" ey="100"/>
+    <PutBox name="cache/tiles/demo_level/floatie5.xml" degrees="100" tx="4712" ty="2240" ex="30" ey="100"/>
+    <PutBox name="cache/tiles/demo_level/floatie2.xml" degrees="80" tx="4612" ty="2340" ex="30" ey="100"/>
+    <PutBox name="cache/tiles/demo_level/floatie3.xml" degrees="60" tx="4212" ty="2540" ex="30" ey="100"/>
+    <PutBox name="cache/tiles/demo_level/floatie4.xml" degrees="120" tx="4912" ty="2440" ex="30" ey="100"/>
+    <PutBox name="cache/tiles/demo_level/floatie5.xml" degrees="20" tx="4512" ty="2440" ex="30" ey="100"/>
+    <PutBox name="cache/tiles/demo_level/floatie.xml" degrees="100" tx="4312" ty="2540" ex="30" ey="100"/>
+    <PutBox name="cache/tiles/demo_level/floatie2.xml" degrees="40" tx="4412" ty="2340" ex="30" ey="100"/>
+    <PutBox name="cache/tiles/demo_level/floatie2.xml" degrees="60" tx="5012" ty="2240" ex="30" ey="100"/>
+    <PutBox name="cache/tiles/demo_level/floatie3.xml" degrees="120" tx="5112" ty="2240" ex="30" ey="100"/>
+    <PutBox name="cache/tiles/demo_level/floatie4.xml" degrees="20" tx="5212" ty="2140" ex="30" ey="100"/>
+    <PutBox name="cache/tiles/demo_level/floatie5.xml" degrees="100" tx="5312" ty="2040" ex="30" ey="100"/>
+    <PutBox name="cache/tiles/demo_level/wind_vert.xml" degrees="0" tx="830" ty="2100" ex="200" ey="600"/>
+    <PutBox name="cache/tiles/demo_level/wind_vert.xml" degrees="0" tx="830" ty="1900" ex="128" ey="600"/>
+    <PutBox name="cache/tiles/demo_level/wind_vert.xml" degrees="0" tx="932" ty="2082" ex="-100" ey="400"/>
+    <PutBox name="cache/tiles/demo_level/wind_vert.xml" degrees="0" tx="737" ty="1570" ex="128" ey="600"/>
+    <PutBox name="cache/tiles/demo_level/wind_vert.xml" degrees="0" tx="922" ty="1705" ex="-200" ey="800"/>
+    <PutBox name="cache/tiles/demo_level/wind_vert.xml" degrees="0" tx="753" ty="2198" ex="128" ey="600"/>
+    <PutBox name="cache/tiles/demo_level/wind_vert.xml" degrees="0" tx="824" ty="1484" ex="-100" ey="400"/>
+    <PutBox name="cache/tiles/demo_level/lavafall.xml" degrees="0" tx="3525" ty="609" ex="150" ey="1000"/>
+    <PutBox name="cache/tiles/demo_level/Demo0+1_rock.png" degrees="0" tx="3576" ty="1143" ex="336" ey="492"/>
+  </Layer>
+
+  <Layer scrollX="0.8" scrollY="0.8">
+    <PutBox name="cache/tiles/demo_level/Demo+1.png" degrees="0" tx="4942" ty="1306" ex="1696" ey="3294"/>
+  </Layer>
+
+  <Layer scrollX="2" scrollY="2">
+    <PutBox name="cache/tiles/demo_level/Demo+2_hump.png" degrees="0" tx="2980" ty="3723" ex="1009" ey="1009"/>
+    <PutBox name="cache/tiles/demo_level/Demo+2_droop.png" degrees="0" tx="6225" ty="786" ex="1648" ey="972"/>
+    <PutBox name="cache/tiles/demo_level/Demo+2_slope.png" degrees="0" tx="10049" ty="4339" ex="1997" ey="2029"/>
+    <PutBox name="cache/tiles/demo_level/Demo+2_slope.png" degrees="0" tx="11704.8" ty="3287.38" ex="1997" ey="2029"/>
+    <PutBox name="cache/tiles/demo_level/Demo+2_hump.png" degrees="0" tx="-978.203" ty="5861.88" ex="1009" ey="1009"/>
+    <PutBox name="cache/tiles/demo_level/Demo+2_hump.png" degrees="0" tx="11194.8" ty="4393.2" ex="1009" ey="1009"/>
+    <PutBox name="cache/tiles/demo_level/Demo+2_hump.png" degrees="0" tx="-636.663" ty="5447.94" ex="1009" ey="1009"/>
+  </Layer>
+
+</Panel>
+

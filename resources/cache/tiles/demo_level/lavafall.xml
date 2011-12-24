@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<GfxHandler src="cache\tiles\demo_level\lavafall.$img" width="150" height="1000" flags="GFX_NOFLAGS">
+
+        <Animation numFrames="30" frameInterval="50"/>
+
+</GfxHandler>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<GfxHandler src="cache/tiles/editor/clip_16.$img" width="16" height="16" flags="GFX_ALWAYSIGNORE">
+<!-- todo: add a flag to not cache attached image -->
+
+        <SurfaceParm flag="SURFACE_NODRAW"/>
+
+</GfxHandler>

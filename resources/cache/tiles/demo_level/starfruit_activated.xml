@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<GfxHandler src="cache\tiles\demo_level\starfruit_activated.$img" width="150" height="300" flags="GFX_NOFLAGS">
+
+        <Animation numFrames="13" frameInterval="40"/>
+
+</GfxHandler>

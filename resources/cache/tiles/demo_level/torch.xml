@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<GfxHandler src="cache\tiles\demo_level\torch.$img" width="200" height="350" flags="GFX_NOFLAGS">
+
+        <Animation numFrames="25" frameInterval="20"/>
+
+</GfxHandler>
