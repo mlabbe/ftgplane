@@ -96,23 +96,32 @@ function initBuffers( panel ) {
 
     /* rendertarget setup */
     scene.rt = new ftgRenderTarget();
+    scene.rt.init( 512, 512 );
 }
 
 function draw() {
-    gl.viewport( 0, 0, gl.viewportWidth, gl.viewportHeight );
-    gl.clear( gl.COLOR_BUFFER_BIT );
 
-    scene.closestZ = scene.planeSpan.getClosestPlaneZ();
+    // Render to rendertarget
+    {
+        scene.rt.bind();
 
-    mat4.perspective( 45, gl.viewportWidth / gl.viewportHeight, 1.0, 4096, scene.pMatrix );
-    mat4.lookAt( scene.cameraPos, [0,0,scene.closestZ], [0,1,0], scene.mvMatrix );
+        gl.viewport( 0, 0, gl.viewportWidth, gl.viewportHeight );
+        gl.clear( gl.COLOR_BUFFER_BIT );
 
-    ftg.mats.def.setProjectionUniform( scene.pMatrix );
-    ftg.mats.silhouette.setProjectionUniform( scene.pMatrix );
+        scene.closestZ = scene.planeSpan.getClosestPlaneZ();
 
-    mvPushMatrix( scene );  
-    scene.planeSpan.drawArrays( scene.mvMatrix );
-    mvPopMatrix( scene );
+        mat4.perspective( 45, gl.viewportWidth / gl.viewportHeight, 1.0, 4096, scene.pMatrix );
+        mat4.lookAt( scene.cameraPos, [0,0,scene.closestZ], [0,1,0], scene.mvMatrix );
+
+        ftg.mats.def.setProjectionUniform( scene.pMatrix );
+        ftg.mats.silhouette.setProjectionUniform( scene.pMatrix );
+
+        mvPushMatrix( scene );  
+        scene.planeSpan.drawArrays( scene.mvMatrix );
+        mvPopMatrix( scene );
+
+        scene.rt.unbind();
+    }
 }
 
 function animate() {
