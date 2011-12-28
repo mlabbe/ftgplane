@@ -102,10 +102,10 @@ function initBuffers( panel ) {
 function draw() {
 
     // Render to rendertarget
+    scene.rt.bind();
     {
-        scene.rt.bind();
-
-        gl.viewport( 0, 0, gl.viewportWidth, gl.viewportHeight );
+        gl.viewport( 0, 0, 512, 512 );
+        //gl.viewport( 0, 0, gl.viewportWidth, gl.viewportHeight );
         gl.clear( gl.COLOR_BUFFER_BIT );
 
         scene.closestZ = scene.planeSpan.getClosestPlaneZ();
@@ -119,8 +119,26 @@ function draw() {
         mvPushMatrix( scene );  
         scene.planeSpan.drawArrays( scene.mvMatrix );
         mvPopMatrix( scene );
+    }
+    scene.rt.unbind();
 
-        scene.rt.unbind();
+    // Rendertarget to screen
+    if ( 1 )
+    {
+        gl.clear( gl.COLOR_BUFFER_BIT );
+        
+        mat4.perspective( 45, gl.viewportWidth / gl.viewportHeight, 1.0, 4096, scene.pMatrix );
+        
+        // this must move
+        gl.activeTexture( gl.TEXTURE0 );
+
+        var texture = ftg.texMan.fetchTexture( "nehe.gif" );
+        gl.bindTexture( gl.TEXTURE_2D, scene.rt.texture );
+        //gl.bindTexture( gl.TEXTURE_2D, texture );
+        ftg.mats.def.useProgram();
+        ftg.mats.def.prepareSamplers();
+
+        ftg.drawPlaneToViewport();
     }
 }
 
