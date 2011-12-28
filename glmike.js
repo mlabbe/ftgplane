@@ -89,11 +89,13 @@ function initBuffers( panel ) {
         p.addObb( [0,-1,0], [0.75,1.25], -45.0,  "nehe.gif" );    
         p.addZ( -10.0 );
     } else {
-        console.log( "Loading " + panel + ".xml" );
         scene.planeSpan.loadPanel( "/resources/" + panel + ".xml" );
     }
 
     scene.planeSpan.updateZOrder();
+
+    /* rendertarget setup */
+    scene.rt = new ftgRenderTarget();
 }
 
 function draw() {
