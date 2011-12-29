@@ -185,9 +185,16 @@ function setCanvasSize() {
 
 function webGLStart() {
     var canvas = document.getElementById( 'maincanvas' );
+
+    // resize handling -- diabled for sluggishness
+    //$(window).resize( function() {setCanvasSize();});
+
+    console.log( "Disable resize handling.");
+
     gl = WebGLUtils.setupWebGL(canvas);
     gl.viewportWidth  = canvas.width;
     gl.viewportHeight = canvas.height;
+    setCanvasSize();
 
     ftg.init( gl );
 
@@ -196,9 +203,6 @@ function webGLStart() {
     initBuffers( scene.panel );
 
 
-    // resize handling
-    $(window).resize( function() {setCanvasSize();});
-    setCanvasSize();
 
     // mouse handling
     $(document).mousemove( function( e ) {

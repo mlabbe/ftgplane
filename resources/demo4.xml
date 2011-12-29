@@ -3,7 +3,7 @@
 <Panel>
 
 
-  <Layer zDistance="-1024" material="postGrayscale">
+  <Layer zDistance="-1024" blitMaterial="postGrayscale">
     <PutBox name="cache/tiles/dev/3.bmp" material="silhouette" degrees="0" tx="0" ty="0" ex="64" ey="64"/>
     <PutBox name="cache/tiles/dev/2.bmp" material="silhouette" degrees="90" tx="128" ty="0" ex="64" ey="64"/>
     <PutBox name="cache/tiles/dev/1.bmp" material="silhouette" degrees="-90" tx="-128" ty="0" ex="64" ey="64"/>
@@ -11,6 +11,10 @@
     <PutBox name="cache/tiles/dev/1.bmp" degrees="0" tx="0" ty="128" ex="64" ey="64"/>
     <PutBox name="cache/tiles/dev/2.bmp" degrees="90" tx="128" ty="128" ex="64" ey="64"/>
     <PutBox name="cache/tiles/dev/3.bmp" material="def" degrees="-90" tx="-128" ty="128" ex="64" ey="64"/>
+
+    <!-- Used to blit to intermediate buffer.  Args correspond to postGrayscale uniforms. -->
+    <BlitArg name="grayness" value="0.8"/>
+
   </Layer>
 
   <Layer zDistance="-800" material="post">
@@ -28,7 +32,6 @@
     <PutBox name="cache/tiles/cliffs/grass_a.png"  degrees="0" tx="-128" ty="0" ex="115" ey="23.25"/>
     <PutBox name="cache/tiles/cliffs/grass_b.png"  degrees="0" tx="0" ty="0" ex="61.5" ey="32.25"/>
   </Layer>
-
 
   <Flush material="post"/> <!-- not supported yet. -->
 

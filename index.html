@@ -50,6 +50,7 @@
                        vec4 col = texture2D( uSampler, vec2( vTextureCoord.s, vTextureCoord.t ) );
 
                        vec3 gray = mix( col.rgb, vec3( dot( col.rgb, vec3( 0.3, 0.59, 0.11 ) ) ), grayness );
+                       //vec3 gray = mix( col.rgb, vec3( dot( col.rgb, vec3( 0.3, 0.59, 0.11 ) ) ), 0.8 );
                        
                        gl_FragColor = vec4( gray, col.a );
                    }
