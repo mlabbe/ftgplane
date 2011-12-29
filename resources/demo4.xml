@@ -13,7 +13,7 @@
     <PutBox name="cache/tiles/dev/3.bmp" material="def" degrees="-90" tx="-128" ty="128" ex="64" ey="64"/>
 
     <!-- Used to blit to intermediate buffer.  Args correspond to postGrayscale uniforms. -->
-    <BlitArg name="grayness" value="0.8"/>
+    <BlitArg name="grayness" value="0.5"/>
 
   </Layer>
 
@@ -35,8 +35,16 @@
 
   <Flush material="post"/> <!-- not supported yet. -->
 
-  <Layer zDistance="-512" material="post">
-    <PutBox name="cache/tiles/dev/1.bmp" degrees="-45" tx="0" ty="0" ex="16" ey="16"/>
+  <Layer zDistance="-500" blitMaterial="post">
+    <PutBox name="cache/tiles/dev/1.bmp" degrees="-45" tx="-32" ty="0" ex="16" ey="16"/>
+    <PutBox name="cache/tiles/dev/1.bmp" degrees="-45" tx="32" ty="0" ex="16" ey="16"/>
   </Layer>
+
+  <Layer zDistance="-512" blitMaterial="postGrayscale">
+    <PutBox name="cache/tiles/dev/1.bmp" degrees="-45" tx="0" ty="0" ex="16" ey="16"/>
+
+    <BlitArg name="grayness" value="1.0"/>
+  </Layer>
+
 
 </Panel>

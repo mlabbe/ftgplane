@@ -116,7 +116,15 @@ function initShaders() {
     post.initShaderById( "post", "vpost", "fpost" );
 
     var postGrayscale = new ftgMaterial();
-    postGrayscale.initShaderValues = postShaderValues;
+    postGrayscale.initShaderValues = function() {
+        this.bindAttribute( "aVertexPosition" );
+        this.bindAttribute( "aTextureCoord" );
+
+        this.initUniform( "uPMatrix" );
+        this.initUniform( "uMVMatrix" );
+        this.initUniform( "uSampler" );
+        this.initUniform( "grayness" );
+    }
     postGrayscale.initShaderById( "postGrayscale", "vpost", "fpostGrayscale" );
 }
 
@@ -141,6 +149,8 @@ function draw() {
 
     // Intermediate to screen
     {
+        ftg.mats.post.useProgram();
+
         ftg.mats.post.bindTextures( [scene.rt.intermediate.texture] );
         ftg.drawTextureToViewport( ftg.mats.post, gl.viewportWidth, gl.viewportHeight );
     }
