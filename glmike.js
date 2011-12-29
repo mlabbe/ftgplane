@@ -37,10 +37,6 @@ scene.closestZ = 1;
 // Begin helpers
 //
 
-function degToRad( deg ) {
-    return deg * Math.PI / 180;
-}
-
 function mvPushMatrix( s ) {
     var copy = mat4.create();
     mat4.set( s.mvMatrix, copy );
@@ -96,7 +92,7 @@ function initBuffers( panel ) {
 
     /* rendertarget setup */
     scene.rt = new ftgRenderTarget();
-    scene.rt.init( 512, 512 );
+    scene.rt.init( 1024, 1024 );
 }
 
 function draw() {
@@ -104,8 +100,7 @@ function draw() {
     // Render to rendertarget
     scene.rt.bind();
     {
-        gl.viewport( 0, 0, 512, 512 );
-        //gl.viewport( 0, 0, gl.viewportWidth, gl.viewportHeight );
+        gl.viewport( 0, 0, gl.viewportWidth, gl.viewportHeight );
         gl.clear( gl.COLOR_BUFFER_BIT );
 
         scene.closestZ = scene.planeSpan.getClosestPlaneZ();
@@ -123,7 +118,6 @@ function draw() {
     scene.rt.unbind();
 
     // Rendertarget to screen
-    if ( 1 )
     {
         gl.clear( gl.COLOR_BUFFER_BIT );
         
@@ -138,7 +132,7 @@ function draw() {
         ftg.mats.def.useProgram();
         ftg.mats.def.prepareSamplers();
 
-        ftg.drawPlaneToViewport();
+        ftg.drawTextureToViewport();
     }
 }
 
