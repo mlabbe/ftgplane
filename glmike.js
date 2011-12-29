@@ -93,10 +93,6 @@ function initBuffers( panel ) {
 
     /* rendertarget setup */
 
-    // Blit to intermediate and cleared after each plane
-    scene.rt.layer = new ftgRenderTarget();
-    scene.rt.layer.init( gl.viewportWidth/4, gl.viewportHeight/4 );
-
     // Blit to screen on command or after no more planes exist
     scene.rt.intermediate = new ftgRenderTarget();
     scene.rt.intermediate.init( gl.viewportWidth, gl.viewportHeight );
@@ -149,7 +145,7 @@ function draw_old() {
 function draw() {
     {
         gl.viewport( 0, 0, gl.viewportWidth, gl.viewportHeight );
-        gl.clear( gl.COLOR_BUFFER_BIT );
+        //gl.clear( gl.COLOR_BUFFER_BIT );
 
         scene.closestZ = scene.planeSpan.getClosestPlaneZ();
 
@@ -161,8 +157,16 @@ function draw() {
         ftg.mats.silhouette.setProjectionUniform( scene.pMatrix );
 
         mvPushMatrix( scene );  
-        scene.planeSpan.drawArrays( scene.mvMatrix );
+        scene.planeSpan.drawArrays( scene.mvMatrix, scene.rt.intermediate );
+        //scene.planeSpan.drawArrays( scene.mvMatrix, undefined );
         mvPopMatrix( scene );
+    }
+
+    // Intermediate to screen
+    if ( 1 )
+    {
+        ftg.mats.post.bindTextures( [scene.rt.intermediate.texture] );
+        ftg.drawTextureToViewport( ftg.mats.post );
     }
 }
 
