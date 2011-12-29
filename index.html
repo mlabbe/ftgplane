@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Copyright (C) 2011 Frogtoss Games, Inc.  See glmike.js for license. -->
+<!-- Copyright (C) 2011-2012 Frogtoss Games, Inc.  See glmike.js for license. -->
 <HTML>
   <HEAD>
     <TITLE>glMikeFirst</TITLE>
@@ -12,6 +12,7 @@
     <SCRIPT src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></SCRIPT>
     <SCRIPT src="glmike.js" type="text/javascript"></SCRIPT>
 
+    <!-- Post shading -->
     <SCRIPT id="vpost" type="x-shader/x-vertex">
                    // Common vertex post process shader -- perfect for drawTextureToViewport
                    attribute vec3 aVertexPosition;
@@ -28,17 +29,51 @@
     </SCRIPT>
 
     <SCRIPT id="fpost" type="x-shader/x-fragment">
-                       
                    precision mediump float;
                    varying vec2 vTextureCoord;
                    uniform sampler2D uSampler;
 
                    void main( void ) {
                        vec4 col = texture2D( uSampler, vec2( vTextureCoord.s, vTextureCoord.t ) );
-                       //col.a = 0.5;
+                       
                        gl_FragColor = col;
                    }
     </SCRIPT>
+
+    <SCRIPT id="fpostGrayscale" type="x-shader/x-fragment">
+                   precision mediump float;
+                   varying vec2 vTextureCoord;
+                   uniform sampler2D uSampler;
+                   uniform float grayness; /* 0 to 1 */
+
+                   void main( void ) {
+                       vec4 col = texture2D( uSampler, vec2( vTextureCoord.s, vTextureCoord.t ) );
+
+                       vec3 gray = mix( col.rgb, vec3( dot( col.rgb, vec3( 0.3, 0.59, 0.11 ) ) ), grayness );
+                       
+                       gl_FragColor = vec4( gray, col.a );
+                   }
+    </SCRIPT>
+
+    <!-- Forward shading -->
+    <SCRIPT id="vdef" type="x-shader/x-vertex">
+                   // A copy of the def vshader from the js source.
+                   attribute vec3 aVertexPosition;
+                   attribute vec2 aTextureCoord;
+
+                   uniform mat4 uMVMatrix;
+                   uniform mat4 uPMatrix;
+                   uniform mat4 uBoxMatrix;
+
+                   varying vec2 vTextureCoord;
+
+                   void main( void ) {
+                       gl_Position = uPMatrix * uMVMatrix * uBoxMatrix * vec4(aVertexPosition, 1 );
+                       vTextureCoord = aTextureCoord;
+                   }
+    </SCRIPT>
+
+
     
   </HEAD>
 

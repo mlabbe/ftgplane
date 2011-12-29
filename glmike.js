@@ -100,9 +100,8 @@ function initBuffers( panel ) {
 }
 
 function initShaders() {
-    /* Post processing shaders */
-    var post = new ftgMaterial();
-    post.initShaderValues = function() {
+    // postprocessing shader values 
+    var postShaderValues = function() {
         this.bindAttribute( "aVertexPosition" );
         this.bindAttribute( "aTextureCoord" );
 
@@ -110,42 +109,21 @@ function initShaders() {
         this.initUniform( "uMVMatrix" );
         this.initUniform( "uSampler" );
     }
+
+    /* Post processing shaders */
+    var post = new ftgMaterial();
+    post.initShaderValues = postShaderValues;
     post.initShaderById( "post", "vpost", "fpost" );
+
+    var postGrayscale = new ftgMaterial();
+    postGrayscale.initShaderValues = postShaderValues;
+    postGrayscale.initShaderById( "postGrayscale", "vpost", "fpostGrayscale" );
 }
 
-function draw_old() {
-
-    // Render to rendertarget
-    scene.rt.bind();
-    {
-        gl.viewport( 0, 0, gl.viewportWidth, gl.viewportHeight );
-        gl.clear( gl.COLOR_BUFFER_BIT );
-
-        scene.closestZ = scene.planeSpan.getClosestPlaneZ();
-
-        mat4.perspective( 45, gl.viewportWidth / gl.viewportHeight, 1.0, 4096, scene.pMatrix );
-        mat4.lookAt( scene.cameraPos, [0,0,scene.closestZ], [0,1,0], scene.mvMatrix );
-
-        ftg.mats.def.setProjectionUniform( scene.pMatrix );
-        ftg.mats.silhouette.setProjectionUniform( scene.pMatrix );
-
-        mvPushMatrix( scene );  
-        scene.planeSpan.drawArrays( scene.mvMatrix );
-        mvPopMatrix( scene );
-    }
-    scene.rt.unbind();
-
-    // Rendertarget to screen
-    {
-        ftg.mats.post.bindTextures( [scene.rt.texture] );
-        ftg.drawTextureToViewport( ftg.mats.post );
-    }
-}
 
 function draw() {
     {
         gl.viewport( 0, 0, gl.viewportWidth, gl.viewportHeight );
-        //gl.clear( gl.COLOR_BUFFER_BIT );
 
         scene.closestZ = scene.planeSpan.getClosestPlaneZ();
 
@@ -158,15 +136,13 @@ function draw() {
 
         mvPushMatrix( scene );  
         scene.planeSpan.drawArrays( scene.mvMatrix, scene.rt.intermediate );
-        //scene.planeSpan.drawArrays( scene.mvMatrix, undefined );
         mvPopMatrix( scene );
     }
 
     // Intermediate to screen
-    if ( 1 )
     {
         ftg.mats.post.bindTextures( [scene.rt.intermediate.texture] );
-        ftg.drawTextureToViewport( ftg.mats.post );
+        ftg.drawTextureToViewport( ftg.mats.post, gl.viewportWidth, gl.viewportHeight );
     }
 }
 

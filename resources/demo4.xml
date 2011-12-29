@@ -3,7 +3,7 @@
 <Panel>
 
 
-  <Layer zDistance="-1024" material="post">
+  <Layer zDistance="-1024" material="postGrayscale">
     <PutBox name="cache/tiles/dev/3.bmp" material="silhouette" degrees="0" tx="0" ty="0" ex="64" ey="64"/>
     <PutBox name="cache/tiles/dev/2.bmp" material="silhouette" degrees="90" tx="128" ty="0" ex="64" ey="64"/>
     <PutBox name="cache/tiles/dev/1.bmp" material="silhouette" degrees="-90" tx="-128" ty="0" ex="64" ey="64"/>
@@ -33,7 +33,7 @@
   <Flush material="post"/> <!-- not supported yet. -->
 
   <Layer zDistance="-512" material="post">
-    <PutBox name="cache/tiles/dev/1.bmp" material="def" degrees="-45" tx="0" ty="0" ex="16" ey="16"/>
+    <PutBox name="cache/tiles/dev/1.bmp" degrees="-45" tx="0" ty="0" ex="16" ey="16"/>
   </Layer>
 
 </Panel>
