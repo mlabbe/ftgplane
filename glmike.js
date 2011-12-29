@@ -32,7 +32,7 @@ scene.mvMatrix = mat4.create();
 scene.pMatrix  = mat4.create();
 scene.mvMatrixStack = [];
 scene.closestZ = 1;
-scene.mats = {}
+scene.rt = {};
 
 //
 // Begin helpers
@@ -92,14 +92,21 @@ function initBuffers( panel ) {
     scene.planeSpan.updateZOrder();
 
     /* rendertarget setup */
-    scene.rt = new ftgRenderTarget();
-    scene.rt.init( 512, 512 );
+
+    // Blit to intermediate and cleared after each plane
+    scene.rt.layer = new ftgRenderTarget();
+    scene.rt.layer.init( gl.viewportWidth/4, gl.viewportHeight/4 );
+
+    // Blit to screen on command or after no more planes exist
+    scene.rt.intermediate = new ftgRenderTarget();
+    scene.rt.intermediate.init( gl.viewportWidth, gl.viewportHeight );
+
 }
 
 function initShaders() {
     /* Post processing shaders */
-    scene.mats.post = new ftgMaterial();
-    scene.mats.post.initShaderValues = function() {
+    var post = new ftgMaterial();
+    post.initShaderValues = function() {
         this.bindAttribute( "aVertexPosition" );
         this.bindAttribute( "aTextureCoord" );
 
@@ -107,10 +114,10 @@ function initShaders() {
         this.initUniform( "uMVMatrix" );
         this.initUniform( "uSampler" );
     }
-    scene.mats.post.initShaderById( "vpost", "fpost" );
+    post.initShaderById( "post", "vpost", "fpost" );
 }
 
-function draw() {
+function draw_old() {
 
     // Render to rendertarget
     scene.rt.bind();
@@ -134,8 +141,28 @@ function draw() {
 
     // Rendertarget to screen
     {
-        scene.mats.post.bindTextures( [scene.rt.texture] );
-        ftg.drawTextureToViewport( scene.mats.post );
+        ftg.mats.post.bindTextures( [scene.rt.texture] );
+        ftg.drawTextureToViewport( ftg.mats.post );
+    }
+}
+
+function draw() {
+    {
+        gl.viewport( 0, 0, gl.viewportWidth, gl.viewportHeight );
+        gl.clear( gl.COLOR_BUFFER_BIT );
+
+        scene.closestZ = scene.planeSpan.getClosestPlaneZ();
+
+        mat4.perspective( 45, gl.viewportWidth / gl.viewportHeight, 1.0, 4096, scene.pMatrix );
+        mat4.lookAt( scene.cameraPos, [0,0,scene.closestZ], [0,1,0], scene.mvMatrix );
+
+        // Fixme: this isn't going to scale.
+        ftg.mats.def.setProjectionUniform( scene.pMatrix );
+        ftg.mats.silhouette.setProjectionUniform( scene.pMatrix );
+
+        mvPushMatrix( scene );  
+        scene.planeSpan.drawArrays( scene.mvMatrix );
+        mvPopMatrix( scene );
     }
 }
 
@@ -185,8 +212,9 @@ function webGLStart() {
     ftg.init( gl );
 
     scene.panel = getArg('panel');
-    initBuffers( scene.panel );
     initShaders();
+    initBuffers( scene.panel );
+
 
     // resize handling
     $(window).resize( function() {setCanvasSize();});
@@ -199,7 +227,7 @@ function webGLStart() {
     });
     scene.mouseX = scene.mouseY = 0;
 
-    gl.clearColor( 0.5, 0.0, 0.0, 1.0 );
+    gl.clearColor( 0.25, 0.0, 0.0, 1.0 );
     //gl.enable( gl.DEPTH_TEST );
     //gl.depthFunc( gl.ALWAYS );
     gl.enable( gl.BLEND );
