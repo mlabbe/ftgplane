@@ -32,6 +32,7 @@ scene.mvMatrix = mat4.create();
 scene.pMatrix  = mat4.create();
 scene.mvMatrixStack = [];
 scene.closestZ = 1;
+scene.mats = {}
 
 //
 // Begin helpers
@@ -92,7 +93,21 @@ function initBuffers( panel ) {
 
     /* rendertarget setup */
     scene.rt = new ftgRenderTarget();
-    scene.rt.init( 1024, 1024 );
+    scene.rt.init( 512, 512 );
+}
+
+function initShaders() {
+    /* Post processing shaders */
+    scene.mats.post = new ftgMaterial();
+    scene.mats.post.initShaderValues = function() {
+        this.bindAttribute( "aVertexPosition" );
+        this.bindAttribute( "aTextureCoord" );
+
+        this.initUniform( "uPMatrix" );
+        this.initUniform( "uMVMatrix" );
+        this.initUniform( "uSampler" );
+    }
+    scene.mats.post.initShaderById( "vpost", "fpost" );
 }
 
 function draw() {
@@ -119,20 +134,8 @@ function draw() {
 
     // Rendertarget to screen
     {
-        gl.clear( gl.COLOR_BUFFER_BIT );
-        
-        mat4.perspective( 45, gl.viewportWidth / gl.viewportHeight, 1.0, 4096, scene.pMatrix );
-        
-        // this must move
-        gl.activeTexture( gl.TEXTURE0 );
-
-        var texture = ftg.texMan.fetchTexture( "nehe.gif" );
-        gl.bindTexture( gl.TEXTURE_2D, scene.rt.texture );
-        //gl.bindTexture( gl.TEXTURE_2D, texture );
-        ftg.mats.def.useProgram();
-        ftg.mats.def.prepareSamplers();
-
-        ftg.drawTextureToViewport();
+        scene.mats.post.bindTextures( [scene.rt.texture] );
+        ftg.drawTextureToViewport( scene.mats.post );
     }
 }
 
@@ -183,6 +186,7 @@ function webGLStart() {
 
     scene.panel = getArg('panel');
     initBuffers( scene.panel );
+    initShaders();
 
     // resize handling
     $(window).resize( function() {setCanvasSize();});
