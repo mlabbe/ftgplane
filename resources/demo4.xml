@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<Panel>
+
+
+  <Layer zDistance="-1024" material="post">
+    <PutBox name="cache/tiles/dev/3.bmp" material="silhouette" degrees="0" tx="0" ty="0" ex="64" ey="64"/>
+    <PutBox name="cache/tiles/dev/2.bmp" material="silhouette" degrees="90" tx="128" ty="0" ex="64" ey="64"/>
+    <PutBox name="cache/tiles/dev/1.bmp" material="silhouette" degrees="-90" tx="-128" ty="0" ex="64" ey="64"/>
+
+    <PutBox name="cache/tiles/dev/1.bmp" degrees="0" tx="0" ty="128" ex="64" ey="64"/>
+    <PutBox name="cache/tiles/dev/2.bmp" degrees="90" tx="128" ty="128" ex="64" ey="64"/>
+    <PutBox name="cache/tiles/dev/3.bmp" material="def" degrees="-90" tx="-128" ty="128" ex="64" ey="64"/>
+  </Layer>
+
+  <Layer zDistance="-800" material="post">
+    <PutBox name="cache/tiles/cliffs/grass_a.png"  degrees="0" tx="256" ty="0" ex="115" ey="23.25"/>
+    <PutBox name="cache/tiles/cliffs/grass_a.png"  degrees="0" tx="128" ty="0" ex="115" ey="23.25"/>
+    <PutBox name="cache/tiles/cliffs/grass_a.png"  degrees="0" tx="0" ty="0" ex="-115" ey="23.25"/>
+    <PutBox name="cache/tiles/cliffs/grass_a.png"  degrees="0" tx="-128" ty="0" ex="115" ey="23.25"/>
+    <PutBox name="cache/tiles/cliffs/grass_b.png"  degrees="0" tx="0" ty="0" ex="61.5" ey="32.25"/>
+  </Layer>
+
+  <Layer zDistance="-600" material="post">
+    <PutBox name="cache/tiles/cliffs/grass_a.png"  degrees="0" tx="256" ty="0" ex="115" ey="23.25"/>
+    <PutBox name="cache/tiles/cliffs/grass_a.png"  degrees="0" tx="128" ty="0" ex="115" ey="23.25"/>
+    <PutBox name="cache/tiles/cliffs/grass_a.png"  degrees="0" tx="0" ty="0" ex="-115" ey="23.25"/>
+    <PutBox name="cache/tiles/cliffs/grass_a.png"  degrees="0" tx="-128" ty="0" ex="115" ey="23.25"/>
+    <PutBox name="cache/tiles/cliffs/grass_b.png"  degrees="0" tx="0" ty="0" ex="61.5" ey="32.25"/>
+  </Layer>
+
+
+  <Flush material="post"/> <!-- not supported yet. -->
+
+  <Layer zDistance="-512" material="post">
+    <PutBox name="cache/tiles/dev/1.bmp" material="def" degrees="-45" tx="0" ty="0" ex="16" ey="16"/>
+  </Layer>
+
+</Panel>

@@ -17,7 +17,7 @@ Some applications include:
 
 The easiest way to check it out is to run the demo app.  Because the demo references textures, they need to be from somewhere other than the local filesystem.  The easiest thing to do is to use Python to serve them up via HTTP:
 
-    cd ftgplane; python -m SimpleHTTPServer
+    cd ftgplane; python runserver.py
 
 Simply browse to http://localhost:8000 and see the fireworks.
 
