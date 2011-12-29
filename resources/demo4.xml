@@ -3,6 +3,12 @@
 <Panel>
 
 
+  <Layer zDistance="-2048" material="post">
+    <PutBox name="cache/tiles/cliffs/bg_sun.png"  degrees="0" tx="-256" ty="200" ex="350" ey="350"/>
+    <PutBox name="cache/tiles/cliffs/bg_stars_1.png"  degrees="0" tx="256" ty="400" ex="155" ey="141.5"/>
+    <PutBox name="cache/tiles/cliffs/bg_stars_1.png"  degrees="45" tx="156" ty="450" ex="-155" ey="141.5"/>
+  </Layer>
+
   <Layer zDistance="-1024" blitMaterial="postGrayscale">
     <PutBox name="cache/tiles/dev/3.bmp" material="silhouette" degrees="0" tx="0" ty="0" ex="64" ey="64"/>
     <PutBox name="cache/tiles/dev/2.bmp" material="silhouette" degrees="90" tx="128" ty="0" ex="64" ey="64"/>
@@ -23,9 +29,11 @@
     <PutBox name="cache/tiles/cliffs/grass_a.png"  degrees="0" tx="0" ty="0" ex="-115" ey="23.25"/>
     <PutBox name="cache/tiles/cliffs/grass_a.png"  degrees="0" tx="-128" ty="0" ex="115" ey="23.25"/>
     <PutBox name="cache/tiles/cliffs/grass_b.png"  degrees="0" tx="0" ty="0" ex="61.5" ey="32.25"/>
+    <PutBox name="cache/tiles/cliffs/mushrooms_a.png"  degrees="0" tx="-100" ty="0" ex="61.5" ey="32.25"/>
+
   </Layer>
 
-  <Layer zDistance="-600" material="post">
+  <Layer zDistance="-700" material="post">
     <PutBox name="cache/tiles/cliffs/grass_a.png"  degrees="0" tx="256" ty="0" ex="115" ey="23.25"/>
     <PutBox name="cache/tiles/cliffs/grass_a.png"  degrees="0" tx="128" ty="0" ex="115" ey="23.25"/>
     <PutBox name="cache/tiles/cliffs/grass_a.png"  degrees="0" tx="0" ty="0" ex="-115" ey="23.25"/>
@@ -42,7 +50,6 @@
 
   <Layer zDistance="-512" blitMaterial="postGrayscale">
     <PutBox name="cache/tiles/dev/1.bmp" degrees="-45" tx="0" ty="0" ex="16" ey="16"/>
-
     <BlitArg name="grayness" value="1.0"/>
   </Layer>
 
