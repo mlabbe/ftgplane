@@ -21,9 +21,28 @@
  *    distribution.
  */
 
-//
-// To investigate: glDepthTest(GL_ALWAYS) to write to the depth buffer for later 3d particles 
-//
+/*
+  Things that need doing:
+
+   - BUG: I can't get postGrayscale to deliver any differences in some
+layers.  The first and last layer of zombie.xml for example.
+
+   - More shaders!  DOF would be huge.
+
+   - Helper function to set the projection uniform for all materials in texman
+
+   - Blit intermediate to final at different stages, including post processing textures.
+
+   - Particles. jfdi.  In 3d, using depth testing.
+
+   - UIDs for putboxes so the calling code can pull them out and have handles to them.
+
+   - API-level (not data-level) ease of rendering to texture, having
+     that texture be placed in the texman and be referenced by further planespans.
+
+   - Use VBOs, not drawarray calls for maximum performance.
+
+  */
 
 /* Scene globals */
 var gl;
@@ -135,7 +154,7 @@ function draw() {
 
         scene.closestZ = scene.planeSpan.getClosestPlaneZ();
 
-        mat4.perspective( 45, gl.viewportWidth / gl.viewportHeight, 1.0, 4096, scene.pMatrix );
+        mat4.perspective( 45, gl.viewportWidth / gl.viewportHeight, 1.0, 40960, scene.pMatrix );
         mat4.lookAt( scene.cameraPos, [0,0,scene.closestZ], [0,1,0], scene.mvMatrix );
 
         // Fixme: this isn't going to scale.
@@ -166,7 +185,7 @@ function animate() {
     var nw = (scene.mouseX - (w/2))/w*2;
     var nh = (scene.mouseY - (h/2))/h*2;
 
-    var MOVESCALE = -scene.closestZ/2;
+    var MOVESCALE = -scene.closestZ/2.3;
 
     scene.cameraPos[0] = nw * -MOVESCALE;
     scene.cameraPos[1] = nh * MOVESCALE;
@@ -221,7 +240,8 @@ function webGLStart() {
     });
     scene.mouseX = scene.mouseY = 0;
 
-    gl.clearColor( 0.25, 0.0, 0.0, 1.0 );
+    /* cyan-green */
+    gl.clearColor( 41/256, 69/256, 57/256, 1.0 );
     //gl.enable( gl.DEPTH_TEST );
     //gl.depthFunc( gl.ALWAYS );
     gl.enable( gl.BLEND );
