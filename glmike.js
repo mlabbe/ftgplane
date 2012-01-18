@@ -156,6 +156,7 @@ function draw() {
 
         mat4.perspective( 45, gl.viewportWidth / gl.viewportHeight, 1.0, 40960, scene.pMatrix );
         mat4.lookAt( scene.cameraPos, [0,0,scene.closestZ], [0,1,0], scene.mvMatrix );
+        //mat4.lookAt( scene.cameraPos, [scene.cameraPos[0], scene.cameraPos[1], scene.closestZ], [0,1,0], scene.mvMatrix );
 
         // Fixme: this isn't going to scale.
         ftg.mats.def.setProjectionUniform( scene.pMatrix );
@@ -186,6 +187,7 @@ function animate() {
     var nh = (scene.mouseY - (h/2))/h*2;
 
     var MOVESCALE = -scene.closestZ/2.3;
+    //var MOVESCALE = -scene.closestZ/0.25;
 
     scene.cameraPos[0] = nw * -MOVESCALE;
     scene.cameraPos[1] = nh * MOVESCALE;

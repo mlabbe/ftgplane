@@ -2,13 +2,9 @@
 
 <Panel>
 
-  <Layer zDistance="-4000" material="postGrayscale">
-    <PutBox name="cache/tiles/zmtitle/bg.png"  degrees="0" tx="0" ty="0" ex="4200" ey="4200"/>
-
-  </Layer>
 
 
-  <Layer zDistance="-2500" material="post" blitMaterial="postGrayscale">
+  <Layer zDistance="-4500" material="post" blitMaterial="postGrayscale">
     <PutBox name="cache/tiles/zmtitle/logomeat.png"  degrees="0" tx="0" ty="0" ex="1024" ey="1024"/>
 
     <!-- Used to blit to intermediate buffer.  Args correspond to postGrayscale uniforms. -->

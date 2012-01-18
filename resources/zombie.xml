@@ -12,7 +12,7 @@
     <PutBox name="cache/tiles/zmtitle/logomeat.png"  degrees="0" tx="0" ty="0" ex="1024" ey="1024"/>
 
     <!-- Used to blit to intermediate buffer.  Args correspond to postGrayscale uniforms. -->
-    <BlitArg name="grayness" value="0.5"/>
+    <BlitArg name="grayness" value="0.8"/>
 
   </Layer>
 
@@ -20,8 +20,8 @@
     <PutBox name="cache/tiles/zmtitle/alovestory.png"  degrees="0" tx="0" ty="-512" ex="1024" ey="256"/>
   </Layer>
 
-  <Layer zDistance="-1900" material="post">
-    <PutBox name="cache/tiles/zmtitle/sally.png"  degrees="0" tx="0" ty="0" ex="1024" ey="1024"/>
+  <Layer zDistance="-2050" material="post">
+    <PutBox name="cache/tiles/zmtitle/sally.png"  degrees="0" tx="0" ty="256" ex="1024" ey="1024"/>
   </Layer>
 
 </Panel>
